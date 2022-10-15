@@ -34,8 +34,62 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 //    testImplementation 'org.springframework.security:spring-security-test'
+
+
 }
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+def webappDir = "$projectDir/src/main/webapp"
+
+sourceSets {
+    main {
+        resources {
+            srcDirs = ["$webappDir/build", "$projectDir/src/main/resources"]
+        }
+    }
+}
+processResources{
+    dependsOn "frontendBuildProcess"
+}
+def staticPath = "$projectDir/src/main/resources/static"
+def isWindows = System.getProperty('os.name').toLowerCase(Locale.ROOT).contains('windows');
+
+task frontendBuildProcess(){
+    delete staticPath
+    doLast {
+        file(staticPath).mkdir()
+    }
+    dependsOn "npmInstall"
+    dependsOn "npmBuild"
+}
+
+task npmBuild(type: Exec){
+    group = BasePlugin.BUILD_GROUP
+
+    if (isWindows) {
+        commandLine "npm.cmd", "run-script", "build"
+    } else {
+        commandLine "npm", "run-script", "build"
+    }
+}
+
+task npmInstall(type: Exec) {
+    group = BasePlugin.BUILD_GROUP
+    if (isWindows) {
+        commandLine "npm.cmd", "audit", "fix"
+        commandLine 'npm.cmd', 'install'
+    } else {
+        commandLine "npm", "audit", "fix"
+        commandLine 'npm', 'install'
+    }
+}
+
+task frontdev(type: Exec){
+    if (isWindows) {
+        commandLine "npm.cmd", "run-script", "dev"
+    } else {
+        commandLine "npm", "run-script", "dev"
+    }
 }
