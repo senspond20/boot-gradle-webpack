@@ -51,19 +51,21 @@ sourceSets {
     }
 }
 processResources{
-    dependsOn "frontendBuildProcess"
+   dependsOn "frontendBuildProcess"
 }
-def staticPath = "$projectDir/src/main/resources/static"
+
+def staticVuePath = "$projectDir/src/main/resources/static/vue"
 def isWindows = System.getProperty('os.name').toLowerCase(Locale.ROOT).contains('windows');
 
 task frontendBuildProcess(){
-    delete staticPath
-    doLast {
-        file(staticPath).mkdir()
-    }
+//    delete staticPath
+//    doLast {
+//        file(staticPath).mkdir()
+//    }
     dependsOn "npmInstall"
     dependsOn "npmBuild"
 }
+
 
 task npmBuild(type: Exec){
     group = BasePlugin.BUILD_GROUP
@@ -86,10 +88,11 @@ task npmInstall(type: Exec) {
     }
 }
 
-task frontdev(type: Exec){
-    if (isWindows) {
-        commandLine "npm.cmd", "run-script", "dev"
-    } else {
-        commandLine "npm", "run-script", "dev"
-    }
-}
+//task frontdev(type: Exec){
+//    group = BasePlugin.BUILD_GROUP
+//    if (isWindows) {
+//        commandLine "npm.cmd", "run-script", "dev"
+//    } else {
+//        commandLine "npm", "run-script", "dev"
+//    }
+//}

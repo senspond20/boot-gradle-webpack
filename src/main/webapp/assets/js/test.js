@@ -1,10 +1,13 @@
 
 
-function test(){
-    console.log("test")
+class test{
+
+    run(){
+        console.log("test")
+    }
+
 }
 
-
-module.exports = {
-    test
-}
+export default test;
+//
+// module.exports = test;
