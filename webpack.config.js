@@ -83,7 +83,7 @@ const webpackConfig = {
         new VueLoaderPlugin(),
 
         new MiniCssExtractPlugin({
-            filename: "style.css"
+            filename: "style.min.css"
         })
     ],
 }

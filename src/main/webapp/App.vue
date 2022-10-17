@@ -19,7 +19,11 @@ h2{
 }
 </style>
 <script>
-  // import Test from "./pages/Test.vue"
-  // Test();
+import Logos from './components/Logos.vue'
 
+export default {
+  components: {
+    Logos
+  },
+}
 </script>

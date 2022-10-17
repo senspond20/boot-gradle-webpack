@@ -7,7 +7,13 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" th:href="@{/public/vue/style.css}">
+    <link rel="stylesheet" th:href="@{/public/vue/style.min.css}">
+<!--
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        window.__INITIAL_STATE__ = /*[[${state}]]*/ {};
+        /*]]>*/
+    </script>-->
 </head>
 <body>
     <p><strong th:text="${user}"></strong>님 반갑습니다.</p>

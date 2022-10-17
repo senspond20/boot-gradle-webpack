@@ -61,7 +61,7 @@ module.exports = {
     plugins: [
         new VueLoaderPlugin(),
         new MiniCssExtractPlugin({
-            filename: "style.css"
+            filename: "style.min.css"
         })
     ],
 }

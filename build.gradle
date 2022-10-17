@@ -51,7 +51,7 @@ sourceSets {
     }
 }
 processResources{
-   dependsOn "frontendBuildProcess"
+  // dependsOn "frontendBuildProcess"
 }
 
 def staticVuePath = "$projectDir/src/main/resources/static/vue"
@@ -66,6 +66,13 @@ task frontendBuildProcess(){
     dependsOn "npmBuild"
 }
 
+
+task cleanFront(type: Delete){
+    delete staticVuePath
+    doLast {
+        file(staticVuePath).mkdir()
+    }
+}
 
 task npmBuild(type: Exec){
     group = BasePlugin.BUILD_GROUP
@@ -88,11 +95,3 @@ task npmInstall(type: Exec) {
     }
 }
 
-//task frontdev(type: Exec){
-//    group = BasePlugin.BUILD_GROUP
-//    if (isWindows) {
-//        commandLine "npm.cmd", "run-script", "dev"
-//    } else {
-//        commandLine "npm", "run-script", "dev"
-//    }
-//}
