@@ -9,7 +9,6 @@
     "dev": "webpack serve",
     "build": "webpack --mode=production --config=webpack.proc.config.js"
   },
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/senspond20/boot-gradle-webpack.git"
@@ -46,6 +45,10 @@
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.11.1",
-    "serialize-javascript": ">=3.1.0"
+    "serialize-javascript": ">=3.1.0",
+    "vue-server-renderer": "^2.6.10"
+  },
+  "dependencies": {
+    "core-js": "^3.25.5"
   }
 }

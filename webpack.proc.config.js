@@ -5,14 +5,14 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const webappPath = path.resolve(__dirname, 'src/main/webapp');
-const publicPath = path.resolve(__dirname, 'src/main/webapp/assets');
 const outputPath = path.resolve(__dirname, 'src/main/resources/static/vue');
 
 
 module.exports = {
     mode: 'production',
     entry: {
-        app: path.join(webappPath, "app.js"),
+        app: path.join(webappPath, "client.js"),
+        server: path.join(webappPath, "server.js")
     },
     output: {
         path: outputPath,

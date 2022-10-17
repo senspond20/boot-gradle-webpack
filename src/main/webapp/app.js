@@ -1,15 +1,17 @@
-import Vue from "vue";
-import App from "./App.vue"
-import {createRouter} from "./router/index.js"
-import "./assets/css/base.css"
-// import "@/assets/css/base.css"
-import test from "./assets/js/test.js"
-// const test = require("./assets/js/test.js")
-new test().run();
-const router = createRouter()
-const app = new Vue({
-    router,
- //   store,
-    render: h => h(App)
-})
-app.$mount('#root', true)
+import Vue from 'vue'
+import { createRouter } from './router/router.js'
+import store from './store/store.js'
+import App from './App.vue'
+
+export function createApp() {
+
+    const router = createRouter()
+
+    const app = new Vue({
+        router,
+        store,
+        render: h => h(App)
+    })
+
+    return { app, router, store }
+}

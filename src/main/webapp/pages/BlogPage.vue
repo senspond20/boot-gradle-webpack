@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2>This is Home page</h2>
+    <h2>This is Blog page</h2>
     <div>{{ word }}</div>
   </section>
 </template>
@@ -9,7 +9,7 @@
 export default{
   data() {
     return {
-      pageId: 'HomePage'
+      pageId: 'BlogPage'
     }
   },
   computed: {
@@ -20,9 +20,9 @@ export default{
   mounted() {
     if (window.__INITIAL_STATE__ === null) {
       this.getWord()
-    } else [
+    } else {
       window.__INITIAL_STATE__ = null
-    ]
+    }
   },
   methods: {
     getWord() {

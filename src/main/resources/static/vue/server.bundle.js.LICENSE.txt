@@ -9,3 +9,5 @@
  * (c) 2021 Evan You
  * @license MIT
  */
+
+/*! https://mths.be/he v1.2.0 by @mathias | MIT license */

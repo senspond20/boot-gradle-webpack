@@ -1,18 +1,18 @@
 // const os =require('os')
-// const path = require('path')
-// const VueLoaderPlugin = require('vue-loader/lib/plugin')
-// const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-// const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 
-import os from "os"
-import path from "path"
-import VueLoaderPlugin from "vue-loader/lib/plugin.js"
-import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import HtmlWebpackPlugin from "html-webpack-plugin";
-const __dirname = path.resolve();
+//import os from "os"
+// import path from "path"
+// import VueLoaderPlugin from "vue-loader/lib/plugin.js"
+// import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
+// import MiniCssExtractPlugin from "mini-css-extract-plugin";
+// import HtmlWebpackPlugin from "html-webpack-plugin";
+//const __dirname = path.resolve();
 const webappPath = path.resolve(__dirname, 'src/main/webapp');
 const outputPath = path.resolve(__dirname, 'src/main/resources/static/vue');
 const mode = process.env.NODE_ENV === 'production' ? 'production' : 'development';
@@ -20,7 +20,7 @@ const mode = process.env.NODE_ENV === 'production' ? 'production' : 'development
 const webpackConfig = {
     mode: mode,
     entry: {
-        app: path.join(webappPath, "app.js"),
+        app: path.join(webappPath, "client.js"),
     },
     output: {
         path: outputPath,
@@ -88,4 +88,5 @@ const webpackConfig = {
     ],
 }
 
-export default webpackConfig;
+module.exports = webpackConfig;
+// export default webpackConfig;

@@ -35,7 +35,10 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 //    testImplementation 'org.springframework.security:spring-security-test'
 
-
+// https://mvnrepository.com/artifact/org.graalvm.js/js
+    implementation 'org.graalvm.js:js:21.1.0'
+// https://mvnrepository.com/artifact/org.graalvm.js/js-scriptengine
+    implementation 'org.graalvm.js:js-scriptengine:21.1.0'
 }
 
 tasks.named('test') {

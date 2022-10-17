@@ -1,23 +1,15 @@
 <template>
   <div id="root">
     <Logos></Logos>
-    <h1>Vue.js + Spring Boot</h1>
+    <h1>Vue.js + Spring Boot SSR</h1>
     <main>
       <router-view></router-view>
     </main>
     <router-link to="/">Home</router-link>
-    <router-link to="/media">Media</router-link>
+    <router-link to="/blog">Blog</router-link>
+    <div>d</div>
   </div>
 </template>
-<style>
-h1{
-  color: rebeccapurple;
-  font-size: 16px;
-}
-h2{
-  color:red
-}
-</style>
 <script>
 import Logos from './components/Logos.vue'
 
@@ -27,3 +19,15 @@ export default {
   },
 }
 </script>
+
+<style>
+html, body {
+  width: 100%;
+  height: 100vh;
+}
+#root {
+  margin: auto;
+  text-align: center;
+}
+</style>
+

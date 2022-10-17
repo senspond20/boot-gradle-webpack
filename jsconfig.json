@@ -1,27 +1,19 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es5",
     "module": "esnext",
-    "strict": true,
-    "baseUrl": "/",
-    "importHelpers": true,
+    "baseUrl": "./",
     "moduleResolution": "node",
-    "experimentalDecorators": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "allowJs": true,
-    "sourceMap": true,
-    "types": ["webpack"],
     "paths": {
-      "@/*": ["src/main/webapp/*"]
+      "@/*": [
+        "src/main/webapp/*"
+      ]
     },
     "lib": [
       "esnext",
       "dom",
       "dom.iterable",
       "scripthost"
-    ],
-    "include": ["src/main/webapp"],
-    "exclude": ["node_modules"]
+    ]
   }
 }
