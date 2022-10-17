@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 @RequiredArgsConstructor
 @Slf4j
-public class HomeController {
+public class VueServerSideRendererController {
 
     private final VueSsrRenderService vueSsrRenderService;
 
