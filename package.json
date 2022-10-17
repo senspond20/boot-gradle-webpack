@@ -9,7 +9,6 @@
     "dev": "webpack serve",
     "build": "webpack --mode=production --config=webpack.proc.config.js"
   },
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/senspond20/boot-gradle-webpack.git"
@@ -23,11 +22,10 @@
   "homepage": "https://github.com/senspond20/boot-gradle-webpack#readme",
   "devDependencies": {
     "@babel/core": "^7.5.5",
-    "@vue/cli-plugin-babel": "^5.0.4",
-    "@vue/cli-service": "^5.0.4",
+    "@babel/preset-env": "^7.19.4",
+    "@babel/preset-react": "^7.18.6",
     "axios": "^0.21.4",
     "babel-loader": "^8.2.5",
-    "babel-preset-env": "^1.7.0",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^4.2.2",
     "file-loader": "^6.2.0",
@@ -36,15 +34,10 @@
     "mini-css-extract-plugin": "^2.6.1",
     "style-loader": "^3.3.1",
     "url-loader": "^4.1.1",
-    "vue": "^2.6.10",
-    "vue-loader": "^15.7.1",
-    "vue-router": "^3.5.3",
-    "vue-style-loader": "^4.1.2",
-    "vue-template-compiler": "^2.6.10",
-    "vuex": "^3.1.1",
-    "vuex-router-sync": "^5.0.0",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.11.1"
+    "webpack-dev-server": "^4.11.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

@@ -3,7 +3,7 @@
     "target": "esnext",
     "module": "esnext",
     "strict": true,
-    "baseUrl": "/",
+    "baseUrl": "src/main/webapp",
     "importHelpers": true,
     "moduleResolution": "node",
     "experimentalDecorators": true,

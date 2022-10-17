@@ -1,27 +1,19 @@
-const os =require('os')
 const path = require('path')
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-
 const webappPath = path.resolve(__dirname, 'src/main/webapp');
-const publicPath = path.resolve(__dirname, 'src/main/webapp/assets');
-const outputPath = path.resolve(__dirname, 'src/main/resources/static/vue');
-
+const outputPath = path.resolve(__dirname, 'src/main/resources/static/react');
 
 module.exports = {
     mode: 'production',
     entry: {
-        app: path.join(webappPath, "app.js"),
+        index: path.join(webappPath, "index.js"),
     },
     output: {
         path: outputPath,
         filename: '[name].bundle.js'
     },
     resolve: {
-        alias: {
-            vue: 'vue/dist/vue.js'
-        },
         extensions: [".ts", ".tsx", ".js", ".json"],
         fallback : {
             fs: false,
@@ -34,14 +26,9 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
-            },
-            {
-                test: /\.vue$/,
-                loader: 'vue-loader',
-
+                use: ['babel-loader'],
             },
             {
                 test: /\.css$/,
@@ -59,9 +46,8 @@ module.exports = {
         ],
     },
     plugins: [
-        new VueLoaderPlugin(),
         new MiniCssExtractPlugin({
-            filename: "style.css"
-        })
+            filename:  "style.min.css"
+        }),
     ],
 }
