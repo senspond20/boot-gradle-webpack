@@ -10,7 +10,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const webappPath = path.resolve(__dirname, 'src/main/webapp');
-const outputPath = path.resolve(__dirname, 'src/main/resources/static/vue');
+const outputPath = path.resolve(__dirname, 'src/main/resources/static/react');
 const mode = process.env.NODE_ENV === 'production' ? 'production' : 'development';
 
 const webpackConfig = {
@@ -55,6 +55,11 @@ const webpackConfig = {
                     'css-loader',
                 ],
             },
+            {
+                test: /\.(txt|md)$/,
+                use: 'raw-loader'
+            }
+
         ]
     },
     optimization: {

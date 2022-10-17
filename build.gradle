@@ -54,7 +54,7 @@ processResources{
    dependsOn "frontendBuildProcess"
 }
 
-def staticVuePath = "$projectDir/src/main/resources/static/vue"
+def staticReactPath = "$projectDir/src/main/resources/static/react"
 def isWindows = System.getProperty('os.name').toLowerCase(Locale.ROOT).contains('windows');
 
 task frontendBuildProcess(){
@@ -66,6 +66,12 @@ task frontendBuildProcess(){
     dependsOn "npmBuild"
 }
 
+task cleanStatic(type : Delete){
+    delete staticReactPath
+    doLast {
+        file(staticReactPath).mkdir()
+    }
+}
 
 task npmBuild(type: Exec){
     group = BasePlugin.BUILD_GROUP

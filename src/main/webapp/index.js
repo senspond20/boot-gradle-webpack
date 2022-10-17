@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import App from './shared/App.js';
 // import App from 's'
 
-import './assets/css/base.css'
+//import './assets/css/base.css'
+import "./assets/css/global.css";
 
 const ROOT = () => (
     <div>

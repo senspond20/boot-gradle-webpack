@@ -36,7 +36,12 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     'css-loader',
                 ],
+
             },
+            {
+                test: /\.(txt|md)$/,
+                use: 'raw-loader'
+            }
         ]
     },
     optimization: {

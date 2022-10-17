@@ -1,6 +1,7 @@
 import React from 'react';
+import Contents from "../pages/contents";
 
 const App =()=>(
-    <h1>hi</h1>
+    <Contents>hi</Contents>
 )
 export default App;
