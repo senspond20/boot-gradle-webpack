@@ -41,6 +41,8 @@ public class VueSsrRenderer {
 //        log.info("enginScope  : {}", engineScope);
         engineScope.put("rendered", null);             // Global variable declaration
         engineScope.put("route", route);                     // Global variable declaration
+
+        engineScope.put("word", "word");
         engine.eval(read("static/vue/server.bundle.js"), context);
 
         return context.getAttribute("rendered").toString();  // Get rendered variable to String type

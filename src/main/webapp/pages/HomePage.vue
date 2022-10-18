@@ -1,34 +1,43 @@
 <template>
   <section>
     <h2>This is Home page</h2>
-    <div>{{ word }}</div>
+    <div>word : {{ word }}</div>
   </section>
 </template>
 
 <script>
+import axios from "axios";
+
 export default{
   data() {
     return {
-      pageId: 'HomePage'
+      pageId: 'HomePage',
+       word : ""
     }
   },
   computed: {
     word() {
-      return this.$store.getters.getWord
+      // return this.$store.getters.getWord
+      return this.getWord();
     }
   },
   mounted() {
     if (window.__INITIAL_STATE__ === null) {
-      this.getWord()
-    } else [
+     this.getWord();
+    } else {
       window.__INITIAL_STATE__ = null
-    ]
+    }
   },
   methods: {
-    getWord() {
-      this.$store.dispatch('getWordAction', this.pageId)
+    getWord  () {
+      //this.$store.dispatch('getWordAction')
+      axios.get(`http://localhost:9090/word`)
+          .then((response) => {
+            this.word = response.data
+          })
     }
-  }
+  },
+
 }
 </script>
 

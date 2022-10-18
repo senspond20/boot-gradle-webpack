@@ -13,9 +13,9 @@ const store = new Vuex.Store({
             const payload = {
                 message: ''
             }
-            axios.get(`http://localhost:8080/api/get-word/${pageId}`)
+            axios.get(`http://localhost:9090/word`)
                 .then((response) => {
-                    payload.message = response.data.word
+                    payload.message = response.data
                     context.commit('getWord', payload)
                 })
         }

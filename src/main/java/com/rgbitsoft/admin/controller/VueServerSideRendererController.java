@@ -26,6 +26,7 @@ public class VueServerSideRendererController {
         log.info(String.format("SSR Route:%s\t\tIP:%s", path, WebClient.getIp(request)));
         model.addAttribute("rendered", html);
         model.addAttribute("user", "senshig");
+        model.addAttribute("word", "word");
         return "index";
     }
 }
