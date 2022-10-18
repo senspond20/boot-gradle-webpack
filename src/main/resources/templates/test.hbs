@@ -1,0 +1,36 @@
+<!--js-->
+{{#partial "js"}}
+    <!-- handlebars template 삽입 코드가 추가될 영역 -->
+    {{> template/table}}
+    {{> template/pageMarker}}
+    <script>
+        /*  javascript가 추가될 영역  */
+        var data = {
+            contents : [
+                { user : "user1", title : "제목입니다." },
+                { user : "user2", title : "안녕하세요." },
+                { user : "user3", title : "테이블 완성~!" }
+            ]
+        };
+
+        var page = {
+            startPage : 1,
+            endPage: 5,
+            totalPages: 5
+        }
+
+        window.onload = function () {
+            var template = Handlebars.compile($("#tableList").html());
+            if(typeof data === 'undefined') {
+                $("#tableSpace").html(template());
+            }else{
+                $("#tableSpace").html(template(data));
+            }
+
+            var template = Handlebars.compile($("#pageMarker").html());
+            $("#pageMarkerSpace").html(template(page));
+        }
+    </script>
+    {{#block "helper"}}{{/block}}
+{{/partial}}
+<!--js-->

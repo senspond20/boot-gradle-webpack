@@ -22,7 +22,7 @@ dependencies {
 //    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 //    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 //    implementation 'org.springframework.boot:spring-boot-starter-security'
-    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+//    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2'
 //    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
@@ -35,6 +35,10 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 //    testImplementation 'org.springframework.security:spring-security-test'
 
+    // https://mvnrepository.com/artifact/org.webjars.npm/handlebars
+//    implementation 'org.webjars.npm:handlebars:4.7.7'
+
+    implementation 'pl.allegro.tech.boot:handlebars-spring-boot-starter:0.3.4'
 
 }
 
@@ -51,16 +55,16 @@ sourceSets {
     }
 }
 processResources{
-    dependsOn "frontendBuildProcess"
+   // dependsOn "frontendBuildProcess"
 }
 def staticPath = "$projectDir/src/main/resources/static"
 def isWindows = System.getProperty('os.name').toLowerCase(Locale.ROOT).contains('windows');
 
 task frontendBuildProcess(){
-    delete staticPath
-    doLast {
-        file(staticPath).mkdir()
-    }
+//    delete staticPath
+//    doLast {
+//        file(staticPath).mkdir()
+//    }
     dependsOn "npmInstall"
     dependsOn "npmBuild"
 }

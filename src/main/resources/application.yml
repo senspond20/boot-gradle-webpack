@@ -10,4 +10,10 @@ spring:
   thymeleaf:
     cache: false
   mvc:
-    static-path-pattern: /public/**
+    static-path-pattern: /**
+
+handlebars:
+  enabled: true
+  cache: false
+  prefix: classparh:templates/
+  suffix: .hbs

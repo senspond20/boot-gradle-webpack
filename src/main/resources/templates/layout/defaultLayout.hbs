@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Page App</title>
+    <link rel="stylesheet" href="css/style.bundle.css">
+    {{#block "head"}}{{/block}}
+</head>
+<body>
+<nav class="nav">
+    <a href="/" class="nav__link" data-link>Dashboard</a>
+    <a href="/users" class="nav__link" data-link>Users</a>
+    <a href="/posts" class="nav__link" data-link>Posts</a>
+    <a href="/settings" class="nav__link" data-link>Settings</a>
+    <a href="/raw" class="nav__link" data-link>Raw</a>
+</nav>
+<!-- main-conent -->
+<main id="main-conent">
+    {{#block "contents"}}{{/block}}
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="js/index.bundle.js"></script>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+{{#block "addScript"}}{{/block}}
+
+</body>
+</html>

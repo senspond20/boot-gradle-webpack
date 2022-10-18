@@ -1,0 +1,24 @@
+{{#> layout/defaultLayout}}
+
+    {{#partial "head"}}
+        <title>안녕하세요</title>
+    {{/partial}}
+
+
+    {{#partial "contents"}}
+        <h1>Welcome !!! </h1>
+        <p>
+            안녕하세요. 반갑습니다. 당신을 환영합니다.
+        </p>
+        <p>
+            <a href="/posts" data-link>View recent posts</a>.
+        </p>
+    {{/partial}}
+
+    {{#partial "addScript"}}
+        <script>
+          console.log("script")
+        </script>
+    {{/partial}}
+
+{{/layout/defaultLayout}}
